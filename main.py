@@ -149,9 +149,9 @@ def gravity(planets, xpos, ypos):
 	for s in planets:
 		spos = s.true
 		direction = spos - ppos
-		force =(s.radius**2)/ (direction.magnitude()**2)/25
+		force =(s.radius**2)/ (direction.magnitude()**2)/50
 		direction.normalize()
-		all_force = all_force + (direction * force)
+		all_force = all_force + (direction * force)*0
 	return all_force
 
 def pause():
@@ -190,7 +190,7 @@ def end():
 	text = font.render("Your Score: " + str(score), 1, (39, 255, 20))
 	text2 = font2.render("Highscore on this computer: " + str(high), 1, (39, 255, 20))
 	screen.blit(text, (390,280))
-	screen.blit(text2, (320,320))
+	screen.blit(text2, (390,320))
 	pygame.display.update()
 	text_file.close()
 	
